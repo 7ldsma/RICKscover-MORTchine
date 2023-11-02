@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3 bg-secondary">
+            
+
+
+        </div>
+        <div class="col-9 bg-secondary-subtle">
+
+            <div infinite-scroll
+                  [infiniteScrollDistance]="distance"
+                  [infiniteScrollThrottle]="throttle"
+                  (scrolled)="onScroll()"
+                  class="row justify-content-center">
+                  
+                <div class="card m-2 " *ngFor="let char of characters, let i = index" 
+                                  style="width: 18rem;">
+                    <img [src]="char.image" class="card-img-top mt-2 rounded-bottom" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ characters[i].name }}</h5>
+                    </div>
+                </div>  
+            </div>
+            
+        </div>
+    </div>
+
+
+</div>
+
+
+       
