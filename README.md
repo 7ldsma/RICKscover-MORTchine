@@ -1,27 +1,45 @@
-# RickscoverMortchine
+# Rickscover Mortchine
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+This web application was developed to display information about the characters of the TV show "Rick & Morty".
 
-## Development server
+## Demo 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Visit the following link
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to run the project locally?
 
-## Build
+- Run `ng serve -o`  in terminal. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Source of the information
 
-## Running unit tests
+https://rickandmortyapi.com/documentation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technologies Used
 
-## Running end-to-end tests
+- Angular
+- Bootstrap
+- CSS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Functional Features
 
-## Further help
+- Infinite scroll to allow more character loading while the user scroll down the page
+- Back to top button after scroll for better user experience.
+- Searc field to search for characters. 
+    - Displays a real-time list of matching characters as the user types in the search field.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Design Features
+
+- Responsive Design for use in diffetent devises 
+- The color range of the “Rick & Morty” brand and the light tone of the images were taken into account to opt for a dark background that has greater contrast and is more pleasing to the eye.
+
+- Rounded edges in character cards make a friendlier user interface.
+
+## Next Steps
+
+- Add the following character filters: 
+    - Status: Alive, Dead or Unknown
+    - Genre: Male, Female, Genderless, Unknown
+    - Season of appereance.
+
+- Make the character cards clickable to display more information of interest. 
