@@ -5,7 +5,7 @@ This web application was developed to display information about the characters o
 ## Demo 
 
 - Visit the following link
-
+https://rickscovermortchine.vercel.app/
 
 ## How to run the project locally?
 
