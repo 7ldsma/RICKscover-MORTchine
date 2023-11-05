@@ -9,8 +9,18 @@
 
 }
 
+.seachbar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #0E353A;
+    height: 100px;
+}
+
 .card{
     background-color: #0D7C85;
+    max-width: 16rem;
+
 }
 
 .card:hover{

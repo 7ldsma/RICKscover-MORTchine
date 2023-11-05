@@ -86,7 +86,17 @@ export class CharactersComponent implements OnInit{
   onWindowScroll():void {
     const yOffSet = window.scrollY;
     const scrollTop = this.document.documentElement.scrollTop
+    const searchbar = document.querySelector('.seachbar');
+
     this.showButton = (yOffSet || scrollTop) > this.scrollHeight;
+
+
+    if (yOffSet || scrollTop > this.scrollHeight) {
+      searchbar?.classList.add('fixed-top');
+    } else {
+      searchbar?.classList.remove('fixed-top');
+    }
+
   }
 
   onScrollTop(): void {
