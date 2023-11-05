@@ -1,4 +1,4 @@
-# Rickscover Mortchine
+# RICKscover MORTchine
 
 This web application was developed to display information about the characters of the TV show "Rick & Morty".
 
