@@ -61,7 +61,7 @@
                     <div class="card-body text-center text-light">
                         <h5 class="card-title fw-bold">{{ searchResults[i].name }}</h5>
                         <p class="card-text">
-                            <span [ngStyle]="{'color': colorStatus(searchResults[i].status)}">"•"</span>
+                            <span class="statusDot" [style.color]="colorStatus(characters[i].status)">•</span>
                             {{ searchResults[i].status }} <br>
                             {{ searchResults[i].gender }} <br>
                             {{ searchResults[i].species }}
