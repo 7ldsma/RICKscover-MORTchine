@@ -1,32 +1,90 @@
-<div class="container">
-    <div class="row">
-        <div class="col-3 bg-secondary">
-            
+<app-header></app-header>
 
+
+<div class="container">
+
+        
+<!-- SEARCHBAR -->
+
+    <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 col-xl-6">
+            <div class="form-floating mb-3">
+                <input type="text" id="floatingInput" placeholder="Character Name" class="form-control" [(ngModel)]="seachKeyword" (input)="searchCharacter()">
+                <label for="floatingInput">Search for Character</label>
+            </div>
 
         </div>
-        <div class="col-9 bg-secondary-subtle">
+    </div>   
+    
 
+
+            
+<!--ALL CHARACTERS LIST -->
+
+    <div class="row">
+        <div *ngIf="!showResults" class="col-12 pt-4">
+            
+            <div infinite-scroll
+            [infiniteScrollDistance]="distance"
+            [infiniteScrollThrottle]="throttle"
+            (scrolled)="onScroll()"
+            class="row justify-content-center">
+            
+                <div class="card m-2 " *ngFor="let char of characters, let i = index" 
+                style="width: 18rem;">
+                    <img [src]="char.image" class="card-img-top mt-2 rounded-bottom" alt="...">
+                    <div class="card-body text-center text-light">
+                        <h5 class="card-title fw-bold">{{ characters[i].name }}</h5>
+                        <p class="card-text">
+                            <span class="statusDot" [style.color]="colorStatus(characters[i].status)" >•</span>
+                            {{ characters[i].status }} <br> 
+                            {{ characters[i].gender }} <br> 
+                            {{ characters[i].species }}
+                        </p>
+
+                    </div>
+                </div>  
+            </div>
+    
+        </div>
+
+<!-- SERCHBAR RESULTS -->
+
+        <div *ngIf="showResults" class="col-12 mt-4">
             <div infinite-scroll
                   [infiniteScrollDistance]="distance"
                   [infiniteScrollThrottle]="throttle"
                   (scrolled)="onScroll()"
                   class="row justify-content-center">
                   
-                <div class="card m-2 " *ngFor="let char of characters, let i = index" 
-                                  style="width: 18rem;">
+                <div class="card m-2 " *ngFor="let char of searchResults, let i = index" 
+                                  style="width: 16rem;">
                     <img [src]="char.image" class="card-img-top mt-2 rounded-bottom" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ characters[i].name }}</h5>
+                    <div class="card-body text-center text-light">
+                        <h5 class="card-title fw-bold">{{ searchResults[i].name }}</h5>
+                        <p class="card-text">
+                            <span [ngStyle]="{'color': colorStatus(searchResults[i].status)}">"•"</span>
+                            {{ searchResults[i].status }} <br>
+                            {{ searchResults[i].gender }} <br>
+                            {{ searchResults[i].species }}
+                        </p>
                     </div>
                 </div>  
-            </div>
-            
+            </div>           
         </div>
+
     </div>
 
-
 </div>
+
+
+
+<!-- SCROLL TO TOP BUTTON -->
+
+<div class="button" *ngIf="showButton">
+    <button class="btn rounded-circle btn-lg btn-secondary" (click)="onScrollTop()" data-toggle="button" aria-pressed="true"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
 
 
        

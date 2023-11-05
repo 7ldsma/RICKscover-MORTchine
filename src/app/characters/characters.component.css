@@ -1,0 +1,32 @@
+.button{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+    z-index: 3;
+    cursor: pointer;
+
+}
+
+.card{
+    background-color: #0D7C85;
+}
+
+.card:hover{
+    border-color: yellow;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: aquamarine;
+}
+
+.card-text{
+    line-height: normal;
+}
+
+.statusDot{
+    font-size: 24px;
+    font-weight: bolder;
+}

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, inject } from '@angular/core';
 import { GetCharactersService } from '../services/characters.service';
 import { Character } from '../interfaces/character';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-characters',
@@ -17,7 +18,14 @@ export class CharactersComponent implements OnInit{
   distance = 2;
   page = 1;
 
-  constructor(public charactersService: GetCharactersService){}
+  seachKeyword: string = "";
+  searchResults: Character[] = [];
+  showResults: boolean = false;
+
+  showButton = false; 
+  scrollHeight = 500;
+
+  constructor(public charactersService: GetCharactersService, @Inject(DOCUMENT) private document: Document){}
 
 
   ngOnInit(): void {
@@ -46,5 +54,43 @@ export class CharactersComponent implements OnInit{
   }
 
 
+  searchCharacter(){
+
+    if(this.seachKeyword.trim() !== ''){
+      const searchedWord = this.seachKeyword.toLowerCase();
+      this.searchResults = this.characters.filter((char) => char.name?.toLowerCase().includes(searchedWord));
+      console.log(this.searchResults)
+      this.showResults = true;
+
+    }else {
+      this.showResults = false;
+    }
+  }
+
+
+  colorStatus(status?: string){
+    switch(status){
+      case "Alive":
+        return 'lime';
+      case "Dead":
+        return 'red';
+      case "unknown":
+        return 'gray';
+      default:
+        return 'white';
+    }
+  }
+  
+  
+  @HostListener('window:scroll')
+  onWindowScroll():void {
+    const yOffSet = window.scrollY;
+    const scrollTop = this.document.documentElement.scrollTop
+    this.showButton = (yOffSet || scrollTop) > this.scrollHeight;
+  }
+
+  onScrollTop(): void {
+    this.document.documentElement.scrollTop = 0;
+  }
 
 }

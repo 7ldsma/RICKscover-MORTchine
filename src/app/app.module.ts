@@ -5,21 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ScrollComponent } from './scroll/scroll.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
-    ScrollComponent,
     HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     InfiniteScrollModule
   ],
