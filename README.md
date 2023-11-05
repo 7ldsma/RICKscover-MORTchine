@@ -41,5 +41,6 @@ https://rickandmortyapi.com/documentation
     - Status: Alive, Dead or Unknown
     - Genre: Male, Female, Genderless, Unknown
     - Season of appereance.
+(These filters are developed and ready to be included in the web app upon request)
 
 - Make the character cards clickable to display more information of interest. 
