@@ -38,7 +38,7 @@ https://rickandmortyapi.com/documentation
 ## Next Steps
 
 - Add the following character filters: 
-    - Status: Alive, Dead or Unknown
+    - Status: Alive, Dead or Unknown.
     - Genre: Male, Female, Genderless, Unknown
     - Season of appearance.
       
